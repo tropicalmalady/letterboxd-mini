@@ -14,7 +14,7 @@ enum Tab {
   details = "Details",
 }
 
-export default function FilmDetailView() {
+export function FilmDetailView() {
   const [tabState, setTabState] = useState<Tab>(Tab.cast);
   const { data, isFetching } = useGetMovieQuery();
 

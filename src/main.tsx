@@ -3,9 +3,8 @@ import { createRoot } from "react-dom/client";
 import React from "react";
 import "./styles/index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import FilmDetailView from "./views/film-detail";
 import AppLayout from "./views/layout";
-import { HomeView } from "./views";
+import { FilmDetailView, HomeView, ListDetail } from "./views";
 
 createRoot(document.getElementById("root") as any).render(
   <StrictMode>
@@ -14,6 +13,7 @@ createRoot(document.getElementById("root") as any).render(
         <Route path="/" element={<AppLayout />}>
           <Route index element={<HomeView />} />
           <Route path="/film/:id" element={<FilmDetailView />} />
+          <Route path="/list/:id" element={<ListDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,15 +1,15 @@
 import React from "react";
 import { useGetListsQuery } from "../../../data/api";
-import { ListPreview } from "../../../components";
-import { TmdbLargeImageUrl } from "../../../utils";
+import { Link, ListPreview } from "../../../components";
+import { Routes, TmdbLargeImageUrl } from "../../../utils";
 
 export default function Lists() {
-  const { data, isPending } = useGetListsQuery();
+  const { data } = useGetListsQuery();
 
   return (
     <div>
       {data?.data?.map((item, index) => (
-        <div key={index}>
+        <Link key={index} to={Routes.list(item?._id ?? "")} className="w-full">
           <ListPreview
             title={item.title ?? ""}
             films={
@@ -21,7 +21,7 @@ export default function Lists() {
               })) ?? []
             }
           />
-        </div>
+        </Link>
       ))}
     </div>
   );

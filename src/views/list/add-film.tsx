@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Label } from "react-aria-components";
 import { FaSearch, FaTrash } from "react-icons/fa";
-import { Input, Loader, Poster } from "../../../components";
-import { useSearchMoviesQuery } from "../../../data/api";
-import { useCreateList } from "../../../context";
-import { TmdbMediumImageUrl } from "../../../utils";
+import { Input, Loader, Poster } from "../../components";
+import { useSearchMoviesQuery } from "../../data/api";
+import { useCreateList } from "../../context";
+import { TmdbMediumImageUrl } from "../../utils";
 
 export default function AddFilm() {
   const [input, setInput] = useState<string>("");

@@ -34,7 +34,7 @@ export default function SearchMovie() {
                 {data.results?.map((item, index) => (
                   <Link key={index} to={Routes.film(item.id?.toString() ?? "")}>
                     <p className="py-1.5 px-4 text-on-primary-3 capitalize">
-                      {`${item.title} (${item.release_date})`}
+                      {`${item.title} (${item.release_date || ""})`}
                       {item.title != item.original_title && (
                         <span className="text-[0.6rem] ml-2 text-[#d8e0e8] capitalize inline-block">
                           {item.original_title}
