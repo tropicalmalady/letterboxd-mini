@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "../../components";
 import { FaAndroid, FaApple } from "react-icons/fa";
+import SearchMovie from "./search-movie";
 
 export default function GettingStarted() {
   return (
     <section className="mx-[-1rem] md:mx-auto overflow-hidden md:overflow-visible">
       <div
-        className="aspect-[1.778] relative mx-[-4rem] md:mx-0"
+        className="aspect-[1.778] relative mx-[-4rem] md:mx-0 flex items-center justify-center"
         style={{
           backgroundImage: `url(https://a.ltrbxd.com/resized/sm/upload/tx/hy/xj/lw/sanctuary-2023-1200-1200-675-675-crop-000000.jpg?v=b1d98010cd)`,
           backgroundRepeat: "no-repeat",
@@ -14,6 +15,7 @@ export default function GettingStarted() {
         }}
       >
         <div className="backdropmask"></div>
+        <SearchMovie />
       </div>
 
       <div className="relative md:mt-[-20%]">

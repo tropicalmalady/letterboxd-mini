@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import React from "react";
-import App from "./app";
 import "./styles/index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FilmView from "./views/film";

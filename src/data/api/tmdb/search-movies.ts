@@ -3,23 +3,26 @@ import { SearchMoviesResponse } from "../../response";
 import { SearchMoviesRequest } from "../../request";
 import { Endpoints } from "../../endpoints";
 import { getRequest } from "../../../lib";
+import useDebouncedValue from "../../../hooks/useDebouncedValue";
 
 export async function SearchMoviesFn({
   query,
 }: SearchMoviesRequest): Promise<RecursivePartial<SearchMoviesResponse>> {
   return getRequest({
     url: Endpoints.tmdb.searchMovies,
-    query,
+    query: {
+      query,
+    },
   });
 }
 
-export function useSearchMoviesQuery() {
-  const query = "";
+export function useSearchMoviesQuery({ query }: SearchMoviesRequest) {
+  const debouncedValue = useDebouncedValue(query);
   return useQuery({
     queryFn: () =>
       SearchMoviesFn({
-        query,
+        query:debouncedValue,
       }),
-    queryKey: ["search-movie", query],
+    queryKey: ["search-movie", debouncedValue],
   });
 }

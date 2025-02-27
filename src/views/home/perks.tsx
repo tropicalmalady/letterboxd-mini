@@ -68,9 +68,9 @@ export function PerkItem({ className, text, icon }: PerkItemProps) {
     <div
       className={`flex gap-3 items-center bg-primary-5 p-5 text-primary-10 rounded-xs ${className}`}
     >
-      <div className="w-[5rem] h-[3rem] bordered">
+      <div className="w-[5rem] h-[3rem]">
         {icon({
-          className: "bordered text-3xl",
+          className: "text-3xl",
         })}
       </div>
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { LocalStorage } from "../local-storage";
 
-const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8001";
+const baseURL = "http://localhost:8001";
 
 export const axiosInstance = axios.create({
   baseURL,
