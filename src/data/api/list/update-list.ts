@@ -18,12 +18,12 @@ export async function updateListFn({
 
 export function useUpdateListMutation() {
   const queryClient = useQueryClient();
-  
+
   return useMutation({
     mutationFn: updateListFn,
     onSuccess(res) {
       toast.success(res.message);
-      queryClient.invalidateQueries({ queryKey: ["list"] });
+      queryClient.invalidateQueries({ queryKey: ["list","lists"] });
     },
     onError(err) {
       toast.error(ApiErrorMessage(err));

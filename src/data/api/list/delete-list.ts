@@ -23,7 +23,7 @@ export function useDeleteListMutation() {
     mutationFn: deleteListFn,
     onSuccess(res) {
       toast.success(res.message);
-      queryClient.invalidateQueries({ queryKey: ["list"] });
+      queryClient.invalidateQueries({ queryKey: ["list", "lists"] });
     },
     onError(err) {
       toast.error(ApiErrorMessage(err));

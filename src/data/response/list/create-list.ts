@@ -1,3 +1,5 @@
 import { BaseResponse } from "../shared";
 
-export interface CreateListResponse extends BaseResponse {}
+export interface CreateListResponse extends BaseResponse {
+    _id:string;
+}

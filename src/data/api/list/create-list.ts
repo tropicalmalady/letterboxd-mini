@@ -4,7 +4,8 @@ import { Endpoints } from "../../endpoints";
 import { postRequest } from "../../../lib";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { ApiErrorMessage } from "../../../utils";
+import { ApiErrorMessage, Routes } from "../../../utils";
+import { useNavigate } from "react-router-dom";
 
 export async function createListFn(
   body: CreateListRequest
@@ -17,12 +18,14 @@ export async function createListFn(
 
 export function useCreateListMutation() {
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   return useMutation({
     mutationFn: createListFn,
     onSuccess(res) {
-      toast.success(res.message);
-      queryClient.invalidateQueries({ queryKey: ["list"] });
+      toast.success("list Created Succesfully");
+      queryClient.invalidateQueries({ queryKey: ["list", "lists"] });
+      navigate(Routes.list(res._id ?? ""));
     },
     onError(err) {
       toast.error(ApiErrorMessage(err));
