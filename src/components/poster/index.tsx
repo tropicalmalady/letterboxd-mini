@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "../link";
 import { FaEye, FaHeart } from "react-icons/fa";
+import { Routes } from "../../utils";
 
-interface PosterProps {
+export interface PosterProps {
   imageUrl: string;
-  id: string;
+  id: string | number;
   title: string;
   isUnclickable?: boolean;
   className?: string;
@@ -24,10 +25,14 @@ export function Poster({
 }: PosterProps) {
   const child = (
     <div
-      className={`aspect[2/3] relative rounded-sm overflow-hidden group ${className}`}
+      className={`aspect-[2/3] relative rounded-sm overflow-hidden group ${className}`}
       style={{ boxShadow: "inset 0 0 1px #def" }}
     >
-      <img src={imageUrl} alt={title} className="w-full h-full object-cover p-[1px]" />
+      <img
+        src={imageUrl}
+        alt={title}
+        className="w-full h-full object-cover p-[1px]"
+      />
       {!isUnclickable && (
         <div className="absolute border-accent inset-0 rounded-sm border-[0px] group-hover:border-[0.1875rem] transition-all hidden lg:flex items-center ">
           {insights && (
@@ -47,5 +52,5 @@ export function Poster({
     </div>
   );
 
-  return isUnclickable ? child : <Link to="#">{child}</Link>;
+  return isUnclickable ? child : <Link to={Routes.film(id)}>{child}</Link>;
 }

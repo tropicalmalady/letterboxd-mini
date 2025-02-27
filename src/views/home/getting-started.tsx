@@ -9,7 +9,7 @@ export default function GettingStarted() {
       <div
         className="aspect-[1.778] relative mx-[-4rem] md:mx-0 flex items-center justify-center"
         style={{
-          backgroundImage: `url(https://a.ltrbxd.com/resized/sm/upload/tx/hy/xj/lw/sanctuary-2023-1200-1200-675-675-crop-000000.jpg?v=b1d98010cd)`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original/3pgQbeZ72pYjBRcRwV8dNnHgPeV.jpg)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}

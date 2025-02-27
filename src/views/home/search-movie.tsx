@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Dialog, Input, Popover } from "react-aria-components";
+import { Input } from "react-aria-components";
 import { FaSearch } from "react-icons/fa";
 import { Loader } from "../../components";
 import { Link } from "react-router-dom";
-import Routes from "../../utils/routes";
 import { useSearchMoviesQuery } from "../../data/api";
+import { Routes } from "../../utils";
 
 export default function SearchMovie() {
   const [input, setInput] = useState<string>("");
@@ -17,7 +17,7 @@ export default function SearchMovie() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className={
-            "rounded-full py-4 pl-12 pr-9 w-[20rem] md:w-[40rem] bg-white/10 backdrop-blur-[16px] outline-0 border border-primary-10"
+            "rounded-full py-4 pl-12 pr-9 w-[20rem] md:w-[30rem] bg-white/10 backdrop-blur-[16px] outline-0 border border-primary-10"
           }
         />
         <FaSearch className="absolute text-2xl left-4" />

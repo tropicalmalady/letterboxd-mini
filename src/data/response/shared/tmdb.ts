@@ -42,17 +42,18 @@ export interface MovieDetails {
   backdrop_path: string;
   belongs_to_collection?: BelongsToCollection;
   budget: number;
-  Genres: Genre[];
   homepage: string;
   id: number;
+  recommendations: Movies;
   imdb_id: string;
+  studios: Detailable[];
+  countries: Detailable[];
+  genres: Detailable[];
   original_language: string;
   original_title: string;
   overview: string;
   popularity: number;
   poster_path: string;
-  production_companies: ProductionCompany[];
-  production_countries: ProductionCountry[];
   release_date: string;
   revenue: number;
   runtime: number;
@@ -65,7 +66,7 @@ export interface MovieDetails {
   vote_count: number;
   videos: Videos;
   credits: Credits;
-  alternative_titles: AlternativeTitles;
+  alternative_titles: string[];
   similar: Movies;
   "watch/providers": WatchProviders;
 }

@@ -1,5 +1,4 @@
-const Routes = {
-  film: (id: string) => `/film/${id}`,
+export const Routes = {
+  index: "/",
+  film: (id: string | number) => `/film/${id}`,
 };
-
-export default Routes;
