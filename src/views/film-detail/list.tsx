@@ -7,7 +7,7 @@ export default function List() {
   const { data } = useGetMovieQuery();
 
   return (
-    <div className="my-8 space-y-4">
+    <div className="my-8 space-y-4 mx-4 md:mx-0">
       <ListPreview
         title="Similar Movies"
         films={

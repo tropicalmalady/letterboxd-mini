@@ -17,7 +17,7 @@ export function ListPreview({ title, films, isLoading }: ListPreviewProps) {
   }
 
   return (
-    <div className="mt-[3.75rem] mb-[2.3rem] mx-4 md:mx-0">
+    <div className="mt-[3.75rem] mb-[2.3rem]">
       <div className="border-b border-primary-6 mb-4">
         <h6 className="mb-0">{title}</h6>
       </div>

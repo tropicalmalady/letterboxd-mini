@@ -31,7 +31,7 @@ export default function FilmDetailView() {
   }
 
   return (
-    <section className="mx-[-1rem] md:mx-auto overflow-hidden md:overflow-visible">
+    <section className="mx-[-1rem] md:mx-auto overflow-hidden md:overflow-visible pb-16">
       <div
         className="aspect-[1.778] relative mx-[-8rem]"
         style={{
@@ -55,7 +55,7 @@ export default function FilmDetailView() {
           {data?.result?.vote_average && (
             <div className="hidden md:flex mt-4 items-center justify-center">
               <FaStar className="text-accent text-3xl mr-[1rem]" />
-              <p className="text-4xl">{Math.floor(data.result.vote_average)}</p>
+              <p className="text-4xl">{data.result.vote_average.toFixed(1)}</p>
               <p>/10</p>
             </div>
           )}

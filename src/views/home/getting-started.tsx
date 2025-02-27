@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "../../components";
 import { FaAndroid, FaApple } from "react-icons/fa";
 import SearchMovie from "./search-movie";
+import SignUpModal from "./sign-up-modal";
 
 export default function GettingStarted() {
   return (
@@ -29,12 +30,10 @@ export default function GettingStarted() {
         </h2>
 
         <div className="text-center my-12">
-          <Link to={"#"} variant={{ type: "action" }}>
-            Get started — it‘s free!
-          </Link>
+       <SignUpModal/>
         </div>
 
-        <div className="space-x-2 text-center">
+        <div className="space-x-2 text-center px-[1rem]">
           <p>
             The social network for film lovers. Also available on
             <FaApple className="text-primary-10 text-xl inline-block mx-2" />

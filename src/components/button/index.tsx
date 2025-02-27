@@ -3,7 +3,7 @@ import {
   ButtonProps as RACButtonProps,
 } from "react-aria-components";
 import { tv, VariantProps } from "tailwind-variants";
-import {Loader} from "../loader";
+import { Loader } from "../loader";
 import React from "react";
 
 export interface ButtonProps extends RACButtonProps {
@@ -13,11 +13,11 @@ export interface ButtonProps extends RACButtonProps {
 }
 
 export const buttonStyle = tv({
-  base: "transition-all ease-out inline-flex items-center justify-center gap-2",
+  base: "transition-all ease-out inline-flex items-center justify-center gap-2 font-bold rounded-[0.3rem] font-bold px-4 py-1.5 md:px-7 md:py-2.5 text-[1.2rem] hover:opacity-90 outline-none cursor-pointer",
   variants: {
     color: {
-      primary: "text-white bg-[#00ac1c] font-bold rounded-[0.3rem]",
-      secondary: "",
+      primary: "text-white bg-accent",
+      secondary: "text-primary bg-white",
       raw: "",
     },
     isDisabled: {
