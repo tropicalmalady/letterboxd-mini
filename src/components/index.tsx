@@ -5,3 +5,4 @@ export * from "./poster";
 export * from "./list";
 export * from "./input";
 export * from "./modal";
+export * from "./toast";

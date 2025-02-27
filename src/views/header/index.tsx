@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "../../components";
+import { Button, Link } from "../../components";
 import { Routes } from "../../utils";
 import SignInModal from "./sign-in-modal";
+import { useAuth } from "../../context";
 
 export default function HeaderView() {
+  const { isLoggedIn,} = useAuth();
   return (
     <header className="absolute top-0 right-0 left-0 z-10 my-6 px-4 md:px-12 lg:px-[7.5rem]">
       <section>
@@ -17,7 +19,19 @@ export default function HeaderView() {
           </Link>
 
           <div className="space-x-2">
-            <SignInModal />
+            {isLoggedIn ? (
+              <Button
+                variant={{ color: "secondary" }}
+                className={"text-red-500"}
+                onPress={() => {
+                  localStorage.clear();
+                }}
+              >
+                Sign Out
+              </Button>
+            ) : (
+              <SignInModal />
+            )}
           </div>
         </div>
       </section>
