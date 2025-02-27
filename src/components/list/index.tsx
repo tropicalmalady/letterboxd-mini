@@ -22,7 +22,7 @@ export function ListPreview({ title, films, isLoading }: ListPreviewProps) {
         <h6 className="mb-0">{title}</h6>
       </div>
       {!isLoading ? (
-        <div className="flex gap-1.5 md:gap-2.5">
+        <div className="grid grid-cols-4 md:grid-cols-6 gap-1.5 md:gap-2.5">
           {films.slice(0, isMobile ? 4 : 6).map((item, index) => (
             <Poster key={index} {...item} />
           ))}

@@ -5,7 +5,7 @@ import SignInModal from "./sign-in-modal";
 import { useAuth } from "../../context";
 
 export default function HeaderView() {
-  const { isLoggedIn,} = useAuth();
+  const { isLoggedIn, logout } = useAuth();
   return (
     <header className="absolute top-0 right-0 left-0 z-10 my-6 px-4 md:px-12 lg:px-[7.5rem]">
       <section>
@@ -24,7 +24,7 @@ export default function HeaderView() {
                 variant={{ color: "secondary" }}
                 className={"text-red-500"}
                 onPress={() => {
-                  localStorage.clear();
+                  logout();
                 }}
               >
                 Sign Out

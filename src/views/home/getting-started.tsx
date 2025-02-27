@@ -30,7 +30,7 @@ export default function GettingStarted() {
         </h2>
 
         <div className="text-center my-12">
-       <SignUpModal/>
+          <SignUpModal />
         </div>
 
         <div className="space-x-2 text-center px-[1rem]">
