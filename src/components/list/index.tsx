@@ -10,8 +10,6 @@ interface ListProps {
 }
 
 export function List({ title, films }: ListProps) {
-  const isMobile = useIsMobile();
-
   return (
     <div className="mt-[3.75rem] mb-[2.3rem] text-left">
       {title && (
@@ -20,9 +18,7 @@ export function List({ title, films }: ListProps) {
         </div>
       )}
       {films.length == 0 ? (
-        <div className="py-2 flex items-center justify-center bg-primary-5">
-          <p>Empty</p>
-        </div>
+        <div className="py-2"></div>
       ) : (
         <div className="grid grid-cols-4 md:grid-cols-6 gap-1.5 md:gap-2.5">
           {films.map((item, index) => (
@@ -45,9 +41,7 @@ export function ListPreview({ title, films, isLoading }: ListProps) {
         </div>
       )}
       {films.length == 0 ? (
-        <div className="py-2 flex items-center justify-center bg-primary-5">
-          <p>Empty</p>
-        </div>
+        <div className="py-2"></div>
       ) : !isLoading ? (
         <div className="grid grid-cols-4 md:grid-cols-6 gap-1.5 md:gap-2.5">
           {films.slice(0, isMobile ? 4 : 6).map((item, index) => (

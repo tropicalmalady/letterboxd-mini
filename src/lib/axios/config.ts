@@ -1,7 +1,7 @@
 import axios from "axios";
 import { LocalStorage } from "../local-storage";
 
-const baseURL = "http://localhost:8001";
+const baseURL = "https://letterboxd-server.vercel.app";
 
 export const axiosInstance = axios.create({
   baseURL,
@@ -28,17 +28,6 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   async (error) => {
-    if (error.response) {
-      console.error("Response error:", error.response.data);
-      console.error("Status:", error.response.status);
-      const originalRequest = error.config;
-      if (error.response.status === 401) {
-      }
-    } else if (error.request) {
-      console.error("Request error:", error.request);
-    } else {
-      console.error("Error:", error.message);
-    }
     return Promise.reject(error);
   }
 );

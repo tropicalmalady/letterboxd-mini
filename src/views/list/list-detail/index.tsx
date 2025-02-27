@@ -6,7 +6,7 @@ import Options from "./options";
 import { useCreateList } from "../../../context";
 
 export function ListDetail() {
-  const { data, isPending, isSuccess } = useGetListQuery();
+  const { data, isPending, isSuccess, isError } = useGetListQuery();
   const { setFilms, setNotes, setTitle } = useCreateList();
 
   useEffect(() => {
@@ -21,6 +21,14 @@ export function ListDetail() {
     return (
       <div className="h-screen flex items-center justify-center">
         <Loader />
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        <h6>Something went wrong</h6>
       </div>
     );
   }
