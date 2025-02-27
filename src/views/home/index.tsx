@@ -8,7 +8,7 @@ export function HomeView() {
     <>
       <GettingStarted />
       <TrendingMovies />
-      <Perks/>
+      <Perks />
     </>
   );
 }

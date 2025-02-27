@@ -4,9 +4,9 @@ import { FaAndroid, FaApple } from "react-icons/fa";
 
 export default function GettingStarted() {
   return (
-    <section>
+    <section className="mx-[-1rem] md:mx-auto overflow-hidden md:overflow-visible">
       <div
-        className="aspect-[1.778] relative"
+        className="aspect-[1.778] relative mx-[-4rem] md:mx-0"
         style={{
           backgroundImage: `url(https://a.ltrbxd.com/resized/sm/upload/tx/hy/xj/lw/sanctuary-2023-1200-1200-675-675-crop-000000.jpg?v=b1d98010cd)`,
           backgroundRepeat: "no-repeat",
