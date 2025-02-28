@@ -13,6 +13,7 @@ export interface UseCreateList {
   setNotes(val: string | null): void;
   films: Movie[];
   setFilms(val: Movie[]): void;
+  reset(): void;
 }
 
 export const CreateListContext = createContext<UseCreateList | null>(null);
@@ -31,6 +32,11 @@ export function CreateListProvider({ children }: PropsWithChildren) {
         setNotes,
         films,
         setFilms,
+        reset() {
+          setTitle(null);
+          setNotes(null);
+          setFilms([]);
+        },
       }}
     >
       {children}

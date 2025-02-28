@@ -1,11 +1,17 @@
-import React from "react";
-import { useAuth } from "../../../context";
+import React, { useEffect } from "react";
+import { useAuth, useCreateList } from "../../../context";
 import Lists from "./lists";
 import ListModal, { ListModalAction } from "../list-modal";
 import { Button } from "../../../components";
 
 export default function UserLists() {
   const { user } = useAuth();
+  const { reset } = useCreateList();
+
+  useEffect(() => {
+    reset();
+  }, []);
+
   return (
     <section>
       <div className="mt-30 md:mt-40 text-center">

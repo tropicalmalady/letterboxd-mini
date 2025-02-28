@@ -70,7 +70,7 @@ export function FilmDetailView() {
               <p className="text-on-primary-3 md:underline mt-4 md:mt-0">
                 {data?.result?.release_date}
                 <span className="inline-block mx-2">Directed by</span>
-                <span className="inline-block text-on-primary-3 md:underline font-bold md:font-normal">
+                <span className="block md:inline-block text-on-primary-3 md:underline font-bold md:font-normal">
                   {data?.result?.directorName}
                 </span>
               </p>

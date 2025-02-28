@@ -24,7 +24,7 @@ export function useCreateListMutation() {
     mutationFn: createListFn,
     onSuccess(res) {
       toast.success("list Created Succesfully");
-      queryClient.invalidateQueries({ queryKey: ["list", "lists"] });
+      queryClient.invalidateQueries({ queryKey: ["lists"] });
       navigate(Routes.list(res._id ?? ""));
     },
     onError(err) {

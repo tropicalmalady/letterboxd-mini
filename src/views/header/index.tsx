@@ -7,7 +7,7 @@ import { useAuth } from "../../context";
 export default function HeaderView() {
   const { isLoggedIn, logout } = useAuth();
   return (
-    <header className="absolute top-0 right-0 left-0 z-10 my-6 px-4 md:px-12 lg:px-[7.5rem]">
+    <header className="absolute top-0 right-0 left-0 z-10 my-3 md:my-6 px-4 md:px-12 lg:px-[7.5rem]">
       <section>
         <div className="flex items-center justify-between">
           <Link to={Routes.index}>
@@ -18,7 +18,7 @@ export default function HeaderView() {
             />
           </Link>
 
-          <div className="space-x-2">
+          <div>
             {isLoggedIn ? (
               <Button
                 variant={{ color: "secondary" }}

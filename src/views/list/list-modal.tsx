@@ -71,7 +71,7 @@ export default function ListModal({
                         .then((_) => {
                           toast.success("List Updated");
                           queryClient.invalidateQueries({
-                            queryKey: ["list", "lists"],
+                            queryKey: ["list", id],
                           });
                           close();
                         })

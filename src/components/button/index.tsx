@@ -13,7 +13,7 @@ export interface ButtonProps extends RACButtonProps {
 }
 
 export const buttonStyle = tv({
-  base: "transition-all ease-out inline-flex items-center justify-center gap-2 font-bold rounded-[0.3rem] font-bold px-4 py-1.5 md:px-7 md:py-2.5 text-[1.2rem] hover:opacity-90 outline-none cursor-pointer",
+  base: "transition-all ease-out inline-flex items-center justify-center font-bold rounded-[0.3rem] font-bold px-3 py-1.5 md:px-7 md:py-2.5 text-[1.2rem] hover:opacity-90 outline-none cursor-pointer text-sm md:text-base",
   variants: {
     color: {
       primary: "text-white bg-accent",
