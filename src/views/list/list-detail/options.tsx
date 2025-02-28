@@ -3,17 +3,19 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import ListModal, { ListModalAction } from "../list-modal";
 import { Button, Dialog, DialogTrigger } from "react-aria-components";
 import { Modal, Button as Btn } from "../../../components";
-import { useDeleteListMutation } from "../../../data/api";
+import { useDeleteListMutation, useGetListsQuery } from "../../../data/api";
 import { useNavigate, useParams } from "react-router-dom";
 import { ApiErrorMessage, Routes } from "../../../utils";
 import { toast } from "sonner";
 import { useQueryClient } from "@tanstack/react-query";
+import { GetListsResponse } from "../../../data/response";
 
 export default function Options() {
   const { mutateAsync } = useDeleteListMutation();
   const { id } = useParams<{ id: string }>();
   const queryClient = useQueryClient();
   const navigate = useNavigate();
+  const { data } = useGetListsQuery();
 
   return (
     <div className="border-y border-primary-8 mb-4 py-2 text-on-primary-4 px-4 md:px-0">
@@ -45,9 +47,9 @@ export default function Options() {
                       mutateAsync({ listId: id ?? "" })
                         .then((_) => {
                           toast.success("List Deleted");
-                          queryClient.invalidateQueries({
-                            queryKey: ["lists"],
-                          });
+                          queryClient.setQueryData(["lists"], {
+                            data: data?.data?.filter((item) => item._id != id),
+                          } as GetListsResponse);
                           navigate(Routes.index);
                           close();
                         })
